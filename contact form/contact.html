@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/224c54710f.js" crossorigin="anonymous"></script>
+    <!-- embeded fontawesome icons -->
+    <link rel="stylesheet" href="contact.css"> <!-- embeded CSS -->
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> <!-- embeded favicon -->
+    <title>Weather Forecast - Web App</title>
+</head>
+
+<body>
+    <div class="weather-app">
+        <div class="container">
+            <div class="nav">
+                <h3 class="brand"><a href="../index.html" class="link">Weather Forecast</a></h3>
+                <h3 class="brand"><a href="contact form/contact.html" class="link">Contact Us</a></h3>
+            </div>
+            <div class="info" id="info">
+                <i class="fa fa-envelope-open fa-xl" aria-hidden="true"></i>
+                <p><a href="mailto:arnob.25086@gmail.com?" target="_top">arnob.25086@gmail.com</a></p>
+            </div>
+            <div class="info">
+                <i class="fa fa-mobile fa-xl" aria-hidden="true"></i>
+                <p>+91 90417 64460</p>
+            </div>
+            <div class="info">
+                <i class="fa fa-mobile fa-xl" aria-hidden="true"></i>
+                <p>+880 1704 259187</p>
+            </div>
+            <div class="info">
+                <i class="fa fa-map-marker fa-xl" aria-hidden="true"></i>
+                <p><a href="https://goo.gl/maps/U3BuVkiy5nqYJCz2A" target="_blank">Delhi-Jalandhar GT Road (NH1),
+                        Sirhind Side, Mandi Gobindgarh, <br>Punjab - 147301 (India).</a></p>
+            </div>
+
+            <div class="info">
+                <i class="fa fa-brands fa-github fa-xl"></i>
+                <p><a href="https://github.com/nawfs154" target="_blank">nawfs154</a></p>
+            </div>
+
+            <div class="panel">
+                <form method="POST" class="inputMessage" name="google-sheet">
+                    <p class="r1" id="email" name="Name"> Your Name: </p>
+                    <input type="text" name="Name" class="input" placeholder="Enter Your Name...." required>
+
+                    <p class="r1" id="email" name="Email">Your Mail: </p>
+                    <input type="email" name="Email" class="input" placeholder="Enter Your Email Address...." required>
+
+                    <p class="r1" id="number" name="number" min="10000000" max="9999999999">Your Contact No: </p>
+                    <input type="number" name="Contact no" class="input" placeholder="Enter Your Contact No...." required>
+
+                    <p class="r1" id="query" name="Query">Your Query: </p>
+                    <textarea name="Query" id="" placeholder="Enter Your Query Here...." required></textarea>
+
+                    <p class="r1"><input type="submit" value="Submit your query" name="submit"></input></p>
+                    <div class="alert" id="msg" style="text-align: center; color: green;"></div>
+                </form>
+
+                <script>
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycby3yT2PEJzR-2XjTwH2RU5a7Ks0sRMvM5qhakpQ6Ss6EIPdFVWJOVUEY-iL7lzTtB6wIg/exec'
+                    const form = document.forms['google-sheet'];
+                    const msg = document.getElementById("msg");
+
+                    form.addEventListener('submit', e => {
+                        e.preventDefault()
+                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                            .then(response => msg.innerHTML = "Query Submitted")
+                            .catch(error => console.error('Error!', error.message))
+                    })
+                </script>
+            </div>
+
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+body{
+    margin: 0;
+    font-family: 'Rubik' , sans-serif;
+    background-color: #111;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+h1, h3{
+    font-weight: 400;
+}
+
+.nav{
+    margin-left: 10px;
+}
+
+.brand{
+    padding: 10px;
+}
+
+.link{
+    color: #fff;
+    text-decoration: none;
+}
+
+.weather-app{
+    min-height: 100vh;
+    background-image: url(../images/night/cloudy.jpg);
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    transition: 500ms;
+    opacity: 1;
+}
+
+/* add background overlay */
+.weather-app::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: 0;
+}
+
+.container{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding:  2em 3em 4em 3em;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.container > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#info{
+    padding-top: 200px;
+}
+
+.info{
+    align-items: center;
+    padding-bottom: 0;
+    padding-left: 200px; 
+}
+
+.fa{
+    padding-right: 100px;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+}
+
+.r1{
+    padding-top:10px;
+}
+
+.panel{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgba(110, 110, 110, 0.23);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.inputMessage{
+    align-items: center;
+    justify-content: center;
+    
+}
+
+textarea{
+    max-height: 250px;
+    width: 350px;
+    height: 150px;
+    border-radius: 6px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    font-size: 1em;
+    padding: 7px;
+    font-family: 'Rubik', sans-serif;
+    max-width: 350px;
+    min-height: 100px;
+    min-width: 350px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+textarea::placeholder{
+    font-family: 'Rubik', sans-serif;
+}
+
+textarea:hover{
+    background-color: rgb(179, 230, 230);
+    transition: 0.5s;
+}
+
+input{
+    width: 350px;
+    height: 30px;
+    border-radius: 6px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    font-size: 1em;
+    padding-left: 7px;
+    align-items: center;
+}
+
+input:hover{
+    background-color: rgb(179, 230, 230);
+    transition: 0.5s;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+
+/*Media query for responsive design*/
+@media screen and (max-width: 800px) {
+    .panel, .container{
+        position: relative;
+        width: 100%;
+        top: initial;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    html{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .weather-app{
+        min-height: 40em;
+    }
+}
